@@ -19,7 +19,7 @@ module "db" {
 }
 
 module "web" {
-  source          = "./glx-manager/"
+  source          = "./web-manager/"
   name_prefix     = "${var.name_prefix}"
   rds_db_name     = "${var.db_name}"
   rds_username    = "${var.db_username}"
