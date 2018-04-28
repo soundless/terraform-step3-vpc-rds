@@ -1,5 +1,5 @@
 variable "name_prefix" {
-  default = "glxmanager-db"
+  default = "webmanager-db"
 }
 
 variable "env_prefix" {

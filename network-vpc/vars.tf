@@ -3,7 +3,7 @@ variable "region" {
 }
 
 variable "name_prefix" {
-  default = "glxmanager"
+  default = "webmanager"
 }
 
 variable "env_prefix" {

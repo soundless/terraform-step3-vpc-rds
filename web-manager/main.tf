@@ -120,22 +120,22 @@ resource "aws_iam_role_policy_attachment" "container_tier" {
   policy_arn = "arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker"
 }
 
-resource "aws_elastic_beanstalk_application" "glxmanager" {
-  name = "glxmanager"
+resource "aws_elastic_beanstalk_application" "webmanager" {
+  name = "webmanager"
   description = "${var.name_prefix}-${var.env_prefix}"
 }
 
 # application version
 resource "aws_elastic_beanstalk_application_version" "default" {
-  application = "glxmanager"
+  application = "webmanager"
   name = "java-se-jetty-gradle-v3"
   bucket = "${aws_s3_bucket.default.id}"
   key = "${aws_s3_bucket_object.default.id}"
 }
 
-resource "aws_elastic_beanstalk_environment" "glxmanager" {
-  name = "glxmanager-terraform"
-  application = "${aws_elastic_beanstalk_application.glxmanager.name}"
+resource "aws_elastic_beanstalk_environment" "webmanager" {
+  name = "webmanager-terraform"
+  application = "${aws_elastic_beanstalk_application.webmanager.name}"
   solution_stack_name = "64bit Amazon Linux 2017.09 v2.6.8 running Java 8"
   version_label = "${aws_elastic_beanstalk_application_version.default.name}"
   wait_for_ready_timeout = "20m"
