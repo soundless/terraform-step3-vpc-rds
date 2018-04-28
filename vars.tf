@@ -11,10 +11,10 @@ variable "db_username" {
 }
 
 variable "db_name" {
-  default = "ebdb"
+  default = "test"
 }
 
 variable "db_password" {
-  default = "3ddukneTKnUaWkv09fLtqWSzs4p79gt1WVpnnHAuXitCxaBe8X38nPifu5KG1cad"
+  default = "changeme"
 }
 
